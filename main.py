@@ -84,8 +84,8 @@ async def main():
     w3.middleware_onion.inject(ExtraDataToPOAMiddleware, layer=0)
 
     print("Is connected: ", await w3.is_connected())
-
-    print(await get_wallets(w3, 24223430))
+    block = int(input("Input number block: "))
+    print(await get_wallets(w3, block))
 
 if __name__ == '__main__':
     asyncio.run(main())
